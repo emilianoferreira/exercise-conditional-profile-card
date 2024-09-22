@@ -27,6 +27,8 @@ module.exports = {
     historyApiFallback: true,
     public: publicUrl,
     stats: 'errors-warnings',
+    hot: false, // Desactiva el Hot Module Replacement
+    liveReload: false, // Desactiva el Live Reload
   },
   module: {
     rules: [
