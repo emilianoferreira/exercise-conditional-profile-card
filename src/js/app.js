@@ -34,12 +34,12 @@ function render(variables = {}) {
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1> 
-          ${variables.name == null ? "Nombre" : variables.name} 
-          ${variables.lastName == null ? "Apellido" : variables.lastName}
+          ${!variables.name ? "Nombre" : variables.name} 
+          ${!variables.lastName ? "Apellido" : variables.lastName}
           </h1>
-          <h2>${variables.role == null ? "Rol" : variables.role}</h2>
-          <h3>${variables.city == null ? "Ciudad" : variables.city} ${
-    variables.country == null ? "Pais" : variables.country
+          <h2>${!variables.role ? "Rol" : variables.role}</h2>
+          <h3>${!variables.city ? "Ciudad" : variables.city} ${
+    !variables.country ? "Pais" : variables.country
   }</h3>
           <ul class="${
             variables.socialMediaPosition == "position-right"
@@ -47,18 +47,16 @@ function render(variables = {}) {
               : "position-left"
           }">
             <li><a href="https://twitter.com/${
-              variables.twitter == null ? "4geeksacademy" : variables.twitter
+              !variables.twitter ? "4geeksacademy" : variables.twitter
             }"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://github.com/${
-              variables.github == null ? "4geeksacademy" : variables.github
+              !variables.github ? "4geeksacademy" : variables.github
             }"><i class="fab fa-github"></i></a></li>
             <li><a href="https://linkedin.com/school/${
-              variables.linkedin == null ? "4geeksacademy" : variables.linkedin
+              !variables.linkedin ? "4geeksacademy" : variables.linkedin
             }"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://instagram.com/${
-              variables.instagram == null
-                ? "4geeksacademy"
-                : variables.instagram
+              !variables.instagram ? "4geeksacademy" : variables.instagram
             }"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
